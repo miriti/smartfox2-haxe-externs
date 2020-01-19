@@ -1,0 +1,3 @@
+-cp src
+-lib lime
+-lib openfl
