@@ -1,5 +1,6 @@
 package com.smartfoxserver.v2.requests;
 
+import com.smartfoxserver.v2.exceptions.SFSValidationError;
 import com.smartfoxserver.v2.entities.data.ISFSObject;
 
 class LoginRequest extends BaseRequest {

@@ -19,6 +19,7 @@ typedef ConfigObj = {
 	public var buddyManager:IBuddyManager;
 	public var config:Dynamic;
 	public var debug:Bool;
+	public var useBlueBox:Bool;
 	public var lastJoinedRoom:Room;
 	public var logger:Dynamic;
 	public var mySelf:User;
@@ -27,6 +28,10 @@ typedef ConfigObj = {
 	public var userManager:com.smartfoxserver.v2.entities.managers.SFSUserManager;
 	public var version:String;
 	public var isConnected:Bool;
+	public var currentIp(get, null):String;
+	public var currentPort(get, null):Int;
+	public var currentZone(get, null):String;
+	public var isJoining(get, set):Bool;
 	public function new(?configObj:ConfigObj):Void;
 	inline function addEventListener(evtType:String, listener:Dynamic, ?scope:Dynamic):Void {
 		addEventListener(evtType, listener, untyped __js__('this'));
