@@ -1,8 +1,8 @@
 package com.smartfoxserver.v2;
 
+import com.smartfoxserver.v2.entities.User;
 #if html5
 import com.smartfoxserver.v2.entities.Room;
-import com.smartfoxserver.v2.entities.User;
 import com.smartfoxserver.v2.entities.managers.IBuddyManager;
 import com.smartfoxserver.v2.entities.managers.IRoomManager;
 import com.smartfoxserver.v2.util.ConnectionMode;
@@ -32,6 +32,7 @@ typedef ConfigObj = {
 	public var currentPort(get, null):Int;
 	public var currentZone(get, null):String;
 	public var isJoining(get, set):Bool;
+	public var joinedRooms:Array<Dynamic>;
 	public function new(?configObj:ConfigObj):Void;
 	inline function addEventListener(evtType:String, listener:Dynamic, ?scope:Dynamic):Void {
 		addEventListener(evtType, listener, untyped __js__('this'));
@@ -44,7 +45,7 @@ typedef ConfigObj = {
 	public function getRoomById(id:Int):Dynamic;
 	public function getRoomByName(name:String):Dynamic;
 	public function getRoomList():Array<Room>;
-	public function getRoomListFromGroup(groupId:Int):Array<Room>;
+	public function getRoomListFromGroup(groupId:Dynamic):Array<Room>;
 	public function removeEventListener(evtType:Dynamic, listener:Dynamic):Void;
 	public function send(request:Dynamic):Void;
 	public function setClientDetails(platformId:Int, version:String):Void;
@@ -59,6 +60,8 @@ typedef ConfigObj = {
 }
 #else
 class SmartFox {
+	public var mySelf:User;
+
 	public function new(?configObj:Dynamic) {}
 
 	public function connect():Void {}

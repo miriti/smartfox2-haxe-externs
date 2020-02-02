@@ -6,6 +6,7 @@ import com.smartfoxserver.v2.entities.variables.BuddyVariable;
 
 @:native('SFS2X.SFSBuddyManager')
 extern class SFSBuddyManager {
+	public var myOnlineState:Bool;
 	public var buddyList(get, null):Array<Buddy>;
 	inline function get_buddyList():Array<Buddy> {
 		return getBuddyList();

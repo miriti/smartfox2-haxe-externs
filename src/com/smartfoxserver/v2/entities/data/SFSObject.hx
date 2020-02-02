@@ -5,6 +5,8 @@ package com.smartfoxserver.v2.entities.data;
 	inline static function newInstance():SFSObject {
 		return new SFSObject();
 	}
+	static function newFromObject(x:Dynamic):SFSObject;
+
 	function new();
 	function get(key:Dynamic, ?typeId:Int):Dynamic;
 	function getBool(key:String):Bool;
@@ -32,9 +34,9 @@ package com.smartfoxserver.v2.entities.data;
 	inline function getKeys():Array<String> {
 		return getKeysArray();
 	}
-	function getLong(key:String):Float;
+	function getLong(key:String):Int;
 
-	function getLongArray(key:String):Array<Float>;
+	function getLongArray(key:String):Array<Int>;
 	function getSFSArray(key:String):SFSArray;
 	function getSFSObject(key:String):SFSObject;
 	function getShort(key:String):Int;
@@ -72,6 +74,8 @@ package com.smartfoxserver.v2.entities.data;
 	function size():Int;
 
 	function containsKey(key:String):Bool;
+
+	function removeElement(x:String):Void;
 
 	inline function toObject():Dynamic {
 		return this;

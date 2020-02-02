@@ -3,6 +3,7 @@ package com.smartfoxserver.v2.entities.data;
 #if html5
 @:native('SFS2X.SFSArray')
 extern class SFSArray {
+	static function newFromArray(array:Array<Dynamic>):SFSArray;
 	inline static function newInstance():SFSArray {
 		return new SFSArray();
 	}
