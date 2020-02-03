@@ -61,6 +61,8 @@ typedef ConfigObj = {
 #else
 class SmartFox {
 	public var mySelf:User;
+	public var isConnected:Bool = false;
+	public var currentZone:String = null;
 
 	public function new(?configObj:Dynamic) {}
 
