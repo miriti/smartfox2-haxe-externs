@@ -1,7 +1,9 @@
 package com.smartfoxserver.v2.core;
 
+import openfl.events.EventDispatcher;
+
 #if html5
-@:native('SFS2X.SFSEvent') extern class SFSEvent {
+@:native('SFS2X.SFSEvent') extern class SFSEvent extends EventDispatcher {
 	public function new(type:String, params:Dynamic):Void;
 	public var params:Dynamic;
 	public static var CONNECTION:String;
