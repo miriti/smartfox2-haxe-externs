@@ -7,12 +7,24 @@ import com.smartfoxserver.v2.entities.managers.IBuddyManager;
 import com.smartfoxserver.v2.entities.managers.IRoomManager;
 import com.smartfoxserver.v2.util.ConnectionMode;
 
-typedef ConfigObj = {
-	var host:String;
-	var port:Int;
-	var useSSL:Bool;
-	var zone:String;
-	var debug:Bool;
+typedef ConfigData = {
+	host:String,
+	port:Int,
+	?useSSL:Bool,
+	?zone:String,
+	?debug:Bool,
+	?blueBox:{
+		?isActive:Bool,
+		?pollingRate:Int,
+		?proxy:{
+			bypassLocal:Bool,
+			host:String,
+			password:String,
+			port:Int,
+			userName:String
+		},
+		?useHttps:Bool
+	}
 }
 
 @:native('SFS2X.SmartFox') extern class SmartFox {
@@ -33,11 +45,11 @@ typedef ConfigObj = {
 	public var currentZone(get, null):String;
 	public var isJoining(get, set):Bool;
 	public var joinedRooms:Array<Dynamic>;
-	public function new(?configObj:ConfigObj):Void;
+	public function new(?configObj:ConfigData):Void;
 	inline function addEventListener(evtType:String, listener:Dynamic, ?scope:Dynamic):Void {
 		addEventListener(evtType, listener, untyped __js__('this'));
 	}
-	public function connect(?host:String, ?port:Float, ?useSSL:Bool):Void;
+	public function connect(?configData:ConfigData, ?host:String, ?port:Int, ?useSSL:Bool):Void;
 	public function disconnect():Void;
 	public function enableLagMonitor(enabled:Bool, interval:Float, queueSize:Float):Void;
 	public function getJoinedRooms():Dynamic;
