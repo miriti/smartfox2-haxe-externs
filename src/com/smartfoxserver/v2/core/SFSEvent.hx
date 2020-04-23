@@ -1714,11 +1714,6 @@ extern class SFSEvent implements Dynamic
 		return this;
 	}
 
-	public var params(get, null):Dynamic;
-	inline function get_params():Dynamic
-	{
-		return this;
-	}
 
 	public static inline function newInst(type:String, params_:Dynamic = null):SFSEvent {
 		if (params_ == null)

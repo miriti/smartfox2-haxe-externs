@@ -25,7 +25,7 @@ typedef ConfigObj = {
 	var debug:Bool;
 }
 @:native('SFS2X.SmartFox')
-extern class SmartFox implements Dynamic
+extern class SmartFox //implements Dynamic
 {
 	public var buddyManager:IBuddyManager;
 	public var config:Dynamic;

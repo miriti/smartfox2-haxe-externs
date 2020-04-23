@@ -78,6 +78,11 @@ class SmartFoxWrapper //extends SmartFox
     }
     public function send(request:Dynamic):Void
     {
+        if (request._extCmd != "U")
+        {
+            trace("SmartFoxWrapper :: send " + request);
+
+        }
         sfsExt.send(request);
     }
 	public function connect(?host:String, ?port:Int, ?useSSL_:Bool):Void
