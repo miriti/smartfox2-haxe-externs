@@ -40,8 +40,8 @@ interface ISFSObject
 	 * 
 	 * @param	key	The key of the element to be removed.
 	 */
-	function removeElement(key:String):Void;
-	
+	function putNull(key:String):Void;
+
 	/**
 	 * Retrieves a list of all the keys contained in this object.
 	 * 

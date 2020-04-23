@@ -197,11 +197,11 @@ class SFSObject implements ISFSObject
 	}
 	
 	/** @inheritDoc */
-	public function removeElement(key:String):Void
+	public function putNull(key:String):Void
 	{
 		dataHolder[key]=null;
 	}
-	
+
 	/** @inheritDoc */
 	public function getKeys():Array<String>
 	{

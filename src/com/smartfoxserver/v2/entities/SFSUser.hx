@@ -140,12 +140,15 @@ class SFSUser implements User
 	}
 	
 	/** @inheritDoc */
+	// this isn't supported in the js library
+	/*
 	public var playerId(get, null):Null<Int>;
  	private function get_playerId():Null<Int>
 	{
 		// Return from default room
 		return getPlayerId(userManager.smartFox.lastJoinedRoom);
 	}
+	*/
 	
 	/** @inheritDoc */
 	public function isJoinedInRoom(room:Room):Bool
@@ -209,10 +212,9 @@ class SFSUser implements User
 	public function getPlayerId(room:Room):Null<Int>
 	{			
 		var pId:Null<Int> = 0;
-		
-		if(_playerIdByRoomId.exists(room.id))
+		if(_playerIdByRoomId.exists(room.id)) {
 			pId = _playerIdByRoomId.get(room.id);
-	
+		}
 		return pId;
 	}
 	

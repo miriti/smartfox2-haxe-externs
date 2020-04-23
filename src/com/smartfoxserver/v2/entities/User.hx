@@ -41,7 +41,7 @@ interface User
 	 * 
 	 * @see		#getPlayerId()
 	 */ 
-	var playerId(get,null):Null<Int>;
+	//var playerId(get,null):Null<Int>;
 	
 	/**
 	 * Indicates whether this user is a player(<em>playerId</em>greater than<code>0</code>)in the last joined Room or not.
