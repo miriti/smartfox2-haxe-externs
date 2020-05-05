@@ -35,6 +35,13 @@ class SmartFoxWrapper //extends SmartFox
     {
         return sfsExt.lastJoinedRoom;
     }
+
+    public var joinedRooms(get, never):Array<Room>;
+    function get_joinedRooms():Array<Room>
+    {
+        return cast sfsExt.joinedRooms;
+    }
+
     public var userManager(get, never):SFSUserManager;
     function get_userManager():SFSUserManager
     {

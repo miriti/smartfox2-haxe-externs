@@ -85,7 +85,7 @@ class ExtensionRequest extends BaseRequest
 	 * @see		com.smartfoxserver.v2.entities.data.SFSObject SFSObject
 	 * @see		com.smartfoxserver.v2.SmartFox#udpAvailable SmartFox.udpAvailable
 	 */
-	public function new(extCmd:String, params:ISFSObject=null, room:Room=null, useUDP:Bool=false)
+	public function new(extCmd:String, params:ISFSObject=null, room:Room=null, useUDP:Bool = false)
 	{
 		super(BaseRequest.CallExtension);
 		
