@@ -189,7 +189,7 @@ class BaseRequest implements IRequest
 		* This will tell the bitswarm engine how to handle the socket write(TCP vs UDP)
 		*/
 		#if !html5
-		if(Std.isOfType(this, ExtensionRequest))
+		if(Std.is(this, ExtensionRequest))
 			message.isUDP = cast(this,ExtensionRequest).useUDP;
 		#end
 			

@@ -92,7 +92,7 @@ class SetUserPositionRequest extends BaseRequest
 		if(_room==null)
 			errors.push("You are not joined in any room");
 				
-		if(!(Std.isOfType(_room, MMORoom)))
+		if(!(Std.is(_room, MMORoom)))
 			errors.push("Selected Room is not an MMORoom");
 		
 		if(errors.length>0)

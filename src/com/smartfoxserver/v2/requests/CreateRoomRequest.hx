@@ -170,7 +170,7 @@ class CreateRoomRequest extends BaseRequest
 			for(item in _settings.variables)
 			{
 				// Skip unknow elements
-				if(Std.isOfType(item, RoomVariable))
+				if(Std.is(item, RoomVariable))
 				{
 					var rVar:RoomVariable = cast(item, RoomVariable);
 					roomVars.addSFSArray(rVar.toSFSArray());
@@ -216,7 +216,7 @@ class CreateRoomRequest extends BaseRequest
 		}
 		
 		//--- MMORooms ------------------------------------------------------------------------
-		if(Std.isOfType(_settings, MMORoomSettings))
+		if(Std.is(_settings, MMORoomSettings))
 		{
 			var mmoSettings:MMORoomSettings=cast(_settings, MMORoomSettings);
 			var useFloats:Bool=mmoSettings.defaultAOI.isFloat();
@@ -275,7 +275,7 @@ class CreateRoomRequest extends BaseRequest
 				errors.push("Missing Extension id");
 		}
 		
-		if(Std.isOfType(_settings, MMORoomSettings))
+		if(Std.is(_settings, MMORoomSettings))
 		{
 			var mmoSettings:MMORoomSettings=cast(_settings, MMORoomSettings);
 			
