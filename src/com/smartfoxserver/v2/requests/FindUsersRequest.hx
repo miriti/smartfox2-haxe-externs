@@ -101,9 +101,9 @@ class FindUsersRequest extends BaseRequest
 		
 		if(_target !=null)
 		{
-			if(Std.is(_target, Room))
+			if(Std.isOfType(_target, Room))
 				_sfso.putInt(KEY_ROOM, cast(_target, Room).id);
-			else if(Std.is(_target, String))
+			else if(Std.isOfType(_target, String))
 				_sfso.putUtfString(KEY_GROUP, _target);
 			else
 				sfs.logger.warn("Unsupport target type for FindUsersRequest:" + _target);
